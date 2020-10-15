@@ -5,6 +5,7 @@
 //  Copyright © 2016 Xmartlabs SRL. All rights reserved.
 //
 
+#if os(iOS)
 import XCTest
 @testable import XLPagerTabStrip
 
@@ -33,3 +34,5 @@ class XLPagerTabStripTests: XCTestCase {
     }
 
 }
+
+#endif
