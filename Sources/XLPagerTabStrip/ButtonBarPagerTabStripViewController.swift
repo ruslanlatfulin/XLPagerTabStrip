@@ -22,7 +22,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import Foundation
+#if os(iOS)
+import UIKit
 
 public enum ButtonBarItemSpec<CellType: UICollectionViewCell> {
 
@@ -403,3 +404,5 @@ open class ButtonBarPagerTabStripViewController: PagerTabStripViewController, Pa
     private var collectionViewDidLoad = false
 
 }
+
+#endif

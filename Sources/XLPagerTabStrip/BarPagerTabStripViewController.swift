@@ -22,7 +22,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import Foundation
+#if os(iOS)
 import UIKit
 
 public struct BarPagerTabStripSettings {
@@ -96,3 +96,5 @@ open class BarPagerTabStripViewController: PagerTabStripViewController, PagerTab
         barView.moveTo(index: toIndex, animated: true)
     }
 }
+
+#endif
