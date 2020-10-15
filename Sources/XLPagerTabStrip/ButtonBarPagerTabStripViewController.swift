@@ -154,9 +154,9 @@ open class ButtonBarPagerTabStripViewController: PagerTabStripViewController, Pa
         // register button bar item cell
         switch buttonBarItemSpec! {
         case .nibFile(let nibName, let bundle, _):
-            buttonBarView.register(UINib(nibName: nibName, bundle: bundle), forCellWithReuseIdentifier:"Cell")
+            buttonBarView.register(UINib(nibName: nibName, bundle: bundle), forCellWithReuseIdentifier:"ButtonCell")
         case .cellClass:
-            buttonBarView.register(ButtonBarViewCell.self, forCellWithReuseIdentifier:"Cell")
+            buttonBarView.register(ButtonBarViewCell.self, forCellWithReuseIdentifier:"ButtonCell")
         }
         //-
     }
@@ -307,7 +307,7 @@ open class ButtonBarPagerTabStripViewController: PagerTabStripViewController, Pa
     }
 
     open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? ButtonBarViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ButtonCell", for: indexPath) as? ButtonBarViewCell else {
             fatalError("UICollectionViewCell should be or extend from ButtonBarViewCell")
         }
 

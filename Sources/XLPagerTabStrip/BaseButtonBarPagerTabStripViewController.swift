@@ -93,9 +93,9 @@ open class BaseButtonBarPagerTabStripViewController<ButtonBarCellType: UICollect
         // register button bar item cell
         switch buttonBarItemSpec! {
         case .nibFile(let nibName, let bundle, _):
-            buttonBarView.register(UINib(nibName: nibName, bundle: bundle), forCellWithReuseIdentifier:"Cell")
+            buttonBarView.register(UINib(nibName: nibName, bundle: bundle), forCellWithReuseIdentifier:"ButtonCell")
         case .cellClass:
-            buttonBarView.register(ButtonBarCellType.self, forCellWithReuseIdentifier:"Cell")
+            buttonBarView.register(ButtonBarCellType.self, forCellWithReuseIdentifier:"ButtonCell")
         }
         //-
     }
@@ -230,7 +230,7 @@ open class BaseButtonBarPagerTabStripViewController<ButtonBarCellType: UICollect
     }
 
     open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? ButtonBarCellType else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ButtonCell", for: indexPath) as? ButtonBarCellType else {
             fatalError("UICollectionViewCell should be or extend from ButtonBarViewCell")
         }
         let childController = viewControllers[indexPath.item] as! IndicatorInfoProvider // swiftlint:disable:this force_cast
