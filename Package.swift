@@ -24,7 +24,7 @@ let package = Package(
         .target(
             name: "XLPagerTabStrip",
             dependencies: [],
-            sources: ["Sources"]
+            resources: [.process("ButtonCell.xib")]
         ),
         .testTarget(
             name: "XLPagerTabStripTests",
